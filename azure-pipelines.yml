@@ -12,5 +12,5 @@ jobs:
     inputs:
       sourceGitRepositoryUri: 'https://dev.azure.com/TorreyPines/Personal/_git/render-zellij'
       sourceGitRepositoryPersonalAccessToken: $(AZURE_TOKEN)
-      destinationGitRepositoryUri: 'https://gitlab.com/TorreyPines/render-zellij.git'
+      destinationGitRepositoryUri: 'https://gitlab.com/TorreyPines/render-zellij'
       destinationGitRepositoryPersonalAccessToken: $(GITLAB_TOKEN)
