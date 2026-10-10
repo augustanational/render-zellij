@@ -10,7 +10,6 @@ jobs:
   - task: swellaby.mirror-git-repository.mirror-git-repository-vsts-task.mirror-git-repository-vsts-task@1
     displayName: 'Mirror to Gitlab'
     inputs:
-      sourceGitRepositoryUri: 'https://TorreyPines@dev.azure.com/TorreyPines/Personal/_git/render-zellij'
-      sourceGitRepositoryPersonalAccessToken: $(AZURE_TOKEN)
+      sourceGitRepositoryUri: 'https://TorreyPines@dev.azure.com/TorreyPines/Personal/_git/render-zellij.git'
       destinationGitRepositoryUri: 'https://gitlab.com/TorreyPines/render-zellij.git'
       destinationGitRepositoryPersonalAccessToken: $(GITLAB_TOKEN)
