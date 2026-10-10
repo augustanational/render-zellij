@@ -1,0 +1,16 @@
+trigger:
+- main
+jobs:
+- job: Mirror
+  displayName: Mirror
+  timeoutInMinutes: 10
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+  - task: swellaby.mirror-git-repository.mirror-git-repository-vsts-task.mirror-git-repository-vsts-task@1
+    displayName: 'Mirror to Gitlab'
+    inputs:
+      sourceGitRepositoryUri: 'https://TorreyPines@dev.azure.com/TorreyPines/Personal/_git/render-zellij'
+      sourceGitRepositoryPersonalAccessToken: $(AZURE_TOKEN)
+      destinationGitRepositoryUri: 'https://gitlab.com/TorreyPines/render-zellij.git'
+      destinationGitRepositoryPersonalAccessToken: $(GITLAB_TOKEN)
