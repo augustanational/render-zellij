@@ -5,4 +5,6 @@ set -x
 
 /render/zellij attach --create-background
 
+sleep 10s
+
 /render/zellij web --ip 0.0.0.0 --port 8082 --cert localhost+2.pem --key localhost+2-key.pem
