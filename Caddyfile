@@ -1,6 +1,6 @@
-log {
-	output discard
-}
 :8000 {
+	log {
+		output discard
+	}
 	reverse_proxy 127.0.0.1:8100
 }
