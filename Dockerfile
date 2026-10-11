@@ -1,9 +1,6 @@
 FROM debian:latest
 WORKDIR /render
 
-ARG TAILSCALE_VERSION
-ENV TAILSCALE_VERSION=$TAILSCALE_VERSION
-
 RUN apt-get -qq update \
   && apt-get -qq install --upgrade -y --no-install-recommends \
     apt-transport-https \
@@ -16,6 +13,7 @@ RUN apt-get -qq update \
     nodejs \
     npm \
     wget \
+    curl \
     dnsutils \
   > /dev/null \
   && apt-get -qq clean \
@@ -25,11 +23,11 @@ RUN apt-get -qq update \
     /var/tmp/* \
   && :
 
-RUN apt update && apt install -y caddy hx
 RUN echo "+search +short" > /root/.digrc
-COPY run-tailscale.sh /render/
+COPY tokens.db /render/
+COPY run.sh /render/
 
-COPY install-tailscale.sh /tmp
-RUN /tmp/install-tailscale.sh && rm -r /tmp/*
+COPY install.sh /tmp
+RUN /tmp/install.sh && rm -r /tmp/*
 
-CMD ./run-tailscale.sh
+CMD ./run.sh
