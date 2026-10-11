@@ -11,5 +11,5 @@ sleep 10s
 
 while true; do
     sleep 10s
-    /render/zellij web --ip 0.0.0.0 --port 8082 --cert localhost+2.pem --key localhost+2-key.pem --status
+    /render/zellij web --ip 0.0.0.0 --port 8082 --status
 done
