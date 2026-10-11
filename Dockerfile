@@ -14,6 +14,7 @@ RUN apt-get -qq update \
     npm \
     wget \
     curl \
+    caddy \
     dnsutils \
   > /dev/null \
   && apt-get -qq clean \
@@ -25,6 +26,7 @@ RUN apt-get -qq update \
 
 RUN echo "+search +short" > /root/.digrc
 COPY tokens.db /render/
+COPY Caddyfile /render/
 COPY run.sh /render/
 
 COPY install.sh /tmp
