@@ -3,4 +3,4 @@ set -x
 
 /render/zellij attach --create-background
 
-/render/zellij web
+/render/zellij web --ip 0.0.0.0 --port 8082
