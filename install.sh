@@ -10,6 +10,3 @@ cp tokens.db /root/.local/share/zellij/tokens.db
 
 wget https://github.com/tailscale/tailcat/releases/download/v0.7.0/tailcat_0.7.0_linux_amd64.deb
 apt install -y ./tailcat_0.7.0_linux_amd64.deb
-
-mkdir -p /root/.config/tailcat/keys
-cp /etc/secrets/default.private.json /root/.config/tailcat/keys/default.private.json
