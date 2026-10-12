@@ -28,6 +28,7 @@ RUN echo "+search +short" > /root/.digrc
 COPY tokens.db /render/
 COPY Caddyfile /render/
 COPY config.kdl /render/
+COPY script/ /render/
 COPY run.sh /render/
 
 COPY install.sh /tmp
